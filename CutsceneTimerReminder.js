@@ -8,11 +8,11 @@ var Praetorium =
     4: { name: "Doggie Projectile Vomits All Over Door", duration: 72690 },
     5: { name: "Daddy Never Loved Me!", duration: 200690 },
     6: { name: "Massive Power Surge", duration: 101690 },
-    7: { name: "Bloody Glib, Gaius! You Looked Better in Black", duration: 290690 },
-    8: { name: "Scenic Route to the Weapon of Mass Destruction", duration: 57690 },
-    9: { name: "I Took Out My Sword, JUST to Put it Away Again!", duration: 120690 },
-    10: { name: "SUCH DEVASTATION", duration: 310690 },
-    11:{ name: "Thancred's Lala Bread", duration: 240690},
+    7: { name: "Bloody Glib, Gaius! You Looked Better in Black", duration: 230690 },
+    8: { name: "Scenic Route to the Weapon of Mass Destruction", duration: 27690 },
+    9: { name: "I Took Out My Sword, JUST to Put it Away Again!", duration: 90690 },
+    10: { name: "SUCH DEVASTATION", duration: 250690 },
+    11:{ name: "Thancred's Lala Bread", duration: 190690},
     length: 12
 }
 var CastrumMeridianum =
