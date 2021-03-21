@@ -109,19 +109,18 @@ function ValidatedInputsIfNecessary()
         return "";
     var updatedDuty = { length: currentDuty.length};
     var table = document.getElementById("CustomDutyTable");
-    for(var i = 1; i< currentDuty.length; i++)
+    for(var i = 0; i < currentDuty.length; i++)
     {
-        var row = table.rows[i];
-        updatedDuty[i-1] = { name: row.childNodes[0].childNodes[0].value, duration: 0};
-        var t = /(A-Z|a-z|\d|\.|\!|\?|\,|\s)*/.test(updatedDuty[i-1].name);
-        if(updatedDuty[i-1].name != null)
-            updatedDuty[i-1].name = (updatedDuty[i-1].name.replace(/[^a-z0-9áéíóúñü \.,_-]/gim,"")).trim();
+        var row = table.rows[i+1];
+        updatedDuty[i] = { name: row.childNodes[0].childNodes[0].value, duration: 0};
+        if(updatedDuty[i].name != null)
+            updatedDuty[i].name = (updatedDuty[i].name.replace(/[^a-z0-9áéíóúñü \.,_-]/gim,"")).trim();
         else
             return "Invalid Cutscene Name";
-        if(updatedDuty[i-1].name.length == 0)
+        if(updatedDuty[i].name.length == 0)
             return "Invalid Cutscene Name";
-        updatedDuty[i-1].duration = parseInt(row.childNodes[1].childNodes[0].value);
-        if(Number.isNaN(updatedDuty[i-1].duration) || updatedDuty[i-1].duration <= 10 || updatedDuty[i-1].duration % 10 != 0)
+        updatedDuty[i].duration = parseInt(row.childNodes[1].childNodes[0].value);
+        if(Number.isNaN(updatedDuty[i].duration) || updatedDuty[i].duration <= 10 || updatedDuty[i].duration % 10 != 0)
             return "Only whole positive intervals of 10 allowed";
     }
     currentDuty = updatedDuty;
@@ -268,6 +267,7 @@ function CustomizeDutyClick()
 function ResetCustomizationsClick()
 {
     ClearDutyCustomizationTable();
+    UpdateDutySelection();
     document.getElementById("CutsceneCustomizationDisplay").classList.add("hidden");    
     document.getElementById("ResetCustomizationButton").classList.add("hidden");
     document.getElementById("CustomizeDutyButton").classList.remove("hidden");
@@ -286,14 +286,18 @@ function OnCutsceneClick()
         clearTimeout(timerTask);
 	console.log("Playing cutscene "+currentCutscene);
     document.getElementById("currentCutsceneName").innerHTML = "Now Playing: "+currentDuty[currentCutscene].name;
-    timeRemaining = document.getElementById("HDD").value ? currentDuty[currentCutscene].duration + 10000 : currentDuty[currentCutscene].duration;
+    if(currentCutscene == currentDuty.length-1)
+    {
+        document.getElementById("StartCutsceneButton").classList.add("hidden");
+        document.getElementById("nextCutsceneName").innerHTML = "Next Cutscene: Duty Completion";
+    }
+    else
+        document.getElementById("nextCutsceneName").innerHTML = "Next Cutscene: "+currentDuty[currentCutscene+1].name;
     noSleep.enable();
     currentCutscene += 1;
     timerTask = setTimeout(UpdateTimer, 10);
-    if(currentCutscene >= currentDuty.length)
-    {
-        document.getElementById("StartCutsceneButton").classList.add("hidden");
-    }
+    timeRemaining = document.getElementById("HDD").value ? currentDuty[currentCutscene].duration + 10000 : currentDuty[currentCutscene].duration;
+
 }
 
 function UpdateTimer()
@@ -326,10 +330,6 @@ function OnCutsceneEnd()
     }
     else
     {
-        if(currentCutscene == currentDuty.length - 1)
-            document.getElementById("nextCutsceneName").innerHTML = "Next Cutscene: Duty Completion";
-        else
-            document.getElementById("nextCutsceneName").innerHTML = "Next Cutscene: "+currentDuty[currentCutscene+1].name;
         document.getElementById("currentCutsceneName").innerHTML = "Waiting for next cutscene to start";
         document.getElementById("timeRemaining").innerHTML = "";
     }
