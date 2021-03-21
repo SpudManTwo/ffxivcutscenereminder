@@ -6,7 +6,7 @@ var Praetorium =
     2: { name: "Cid is a Creeper", duration:35690 },
     3: { name: "Maggie is a Good Doggo", duration: 50690},
     4: { name: "Doggie Projectile Vomits All Over Door", duration: 72690 },
-    5: { name: "Daddy Never Loved Me!", duration: 245690-45 },
+    5: { name: "Daddy Never Loved Me!", duration: 200690 },
     6: { name: "Massive Power Surge", duration: 101690 },
     7: { name: "Bloody Glib, Gaius! You Looked Better in Black", duration: 290690 },
     8: { name: "Scenic Route to the Weapon of Mass Destruction", duration: 57690 },
