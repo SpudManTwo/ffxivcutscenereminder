@@ -258,6 +258,7 @@ function ClearDutyCustomizationTable()
 
 function CustomizeDutyClick()
 {
+    ClearDutyCustomizationTable();
     document.getElementById("CutsceneCustomizationDisplay").classList.remove("hidden");
     document.getElementById("CustomizeDutyButton").classList.add("hidden");
     document.getElementById("ResetCustomizationButton").classList.remove("hidden");
