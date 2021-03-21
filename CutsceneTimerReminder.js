@@ -295,8 +295,8 @@ function OnCutsceneClick()
     else
         document.getElementById("nextCutsceneName").innerHTML = "Next Cutscene: "+currentDuty[currentCutscene+1].name;
     noSleep.enable();
-    currentCutscene += 1;
     timerTask = setTimeout(UpdateTimer, 10);
+    currentCutscene += 1;
     timeRemaining = document.getElementById("HDD").value ? currentDuty[currentCutscene].duration + 10000 : currentDuty[currentCutscene].duration;
 
 }
