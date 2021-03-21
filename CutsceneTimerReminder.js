@@ -1,13 +1,12 @@
 //Cutscene Lengths in ms
-//Cutscene for Praetorium length courtsey of here https://www.reddit.com/r/ffxiv/comments/az6okc/praetorium_cutscene_lengths/?utm_source=share&utm_medium=web2x&context=3
 var Praetorium =
 {
     0: { name: "Opening", duration: 73000},
-    1: { name: "Ah Cid, My Boy", duration: 175690 },
-    2: { name: "Cid is a Creeper", duration:55690 },
-    3: { name: "Maggie is a Good Doggo", duration: 65690},
-    4: { name: "Doggie Projectile Vomits All Over Door", duration: 92690 },
-    5: { name: "Daddy Never Loved Me!", duration: 245690 },
+    1: { name: "Ah Cid, My Boy", duration: 145690 },
+    2: { name: "Cid is a Creeper", duration:35690 },
+    3: { name: "Maggie is a Good Doggo", duration: 50690},
+    4: { name: "Doggie Projectile Vomits All Over Door", duration: 72690 },
+    5: { name: "Daddy Never Loved Me!", duration: 245690-45 },
     6: { name: "Massive Power Surge", duration: 101690 },
     7: { name: "Bloody Glib, Gaius! You Looked Better in Black", duration: 290690 },
     8: { name: "Scenic Route to the Weapon of Mass Destruction", duration: 57690 },
@@ -295,10 +294,9 @@ function OnCutsceneClick()
     else
         document.getElementById("nextCutsceneName").innerHTML = "Next Cutscene: "+currentDuty[currentCutscene+1].name;
     noSleep.enable();
+    timeRemaining = document.getElementById("HDD").value ? currentDuty[currentCutscene].duration + 15000 : currentDuty[currentCutscene].duration;
     timerTask = setTimeout(UpdateTimer, 10);
     currentCutscene += 1;
-    timeRemaining = document.getElementById("HDD").value ? currentDuty[currentCutscene].duration + 10000 : currentDuty[currentCutscene].duration;
-
 }
 
 function UpdateTimer()
