@@ -1,9 +1,9 @@
 //Cutscene Lengths in ms
 var Praetorium =
 {
-    0: { name: "Opening", duration: 73000},
-    1: { name: "Ah Cid, My Boy", duration: 145690 },
-    2: { name: "Cid is a Creeper", duration:35690 },
+    0: { name: "Opening", duration: 53000},
+    1: { name: "Ah Cid, My Boy", duration: 135690 },
+    2: { name: "Cid is a Creeper", duration: 31690 },
     3: { name: "Maggie is a Good Doggo", duration: 50690},
     4: { name: "Doggie Projectile Vomits All Over Door", duration: 72690 },
     5: { name: "Daddy Never Loved Me!", duration: 200690 },
