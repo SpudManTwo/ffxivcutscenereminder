@@ -4,15 +4,15 @@ var Praetorium =
     0: { name: "Opening", duration: 53000},
     1: { name: "Ah Cid, My Boy", duration: 135690 },
     2: { name: "Cid is a Creeper", duration: 31690 },
-    3: { name: "Maggie is a Good Doggo", duration: 50690},
-    4: { name: "Doggie Projectile Vomits All Over Door", duration: 72690 },
-    5: { name: "Daddy Never Loved Me!", duration: 200690 },
-    6: { name: "Massive Power Surge", duration: 101690 },
-    7: { name: "Bloody Glib, Gaius! You Looked Better in Black", duration: 230690 },
+    3: { name: "Maggie is a Good Doggo", duration: 47690},
+    4: { name: "Doggie Projectile Vomits All Over Door", duration: 62690 },
+    5: { name: "Daddy Never Loved Me!", duration: 180690 },
+    6: { name: "Massive Power Surge", duration: 71690 },
+    7: { name: "Bloody Glib, Gaius! You Looked Better in Black", duration: 220690 },
     8: { name: "Scenic Route to the Weapon of Mass Destruction", duration: 27690 },
-    9: { name: "I Took Out My Sword, JUST to Put it Away Again!", duration: 90690 },
-    10: { name: "SUCH DEVASTATION", duration: 250690 },
-    11:{ name: "Thancred's Lala Bread", duration: 190690},
+    9: { name: "I Took Out My Sword, JUST to Put it Away Again!", duration: 80690 },
+    10: { name: "SUCH DEVASTATION", duration: 248690 },
+    11:{ name: "Thancred's Lala Bread", duration: 183690},
     length: 12
 }
 var CastrumMeridianum =
