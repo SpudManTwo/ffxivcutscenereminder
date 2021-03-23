@@ -2,7 +2,7 @@
 var Praetorium =
 {
     0: { name: "Opening", duration: 53000},
-    1: { name: "Ah Cid, My Boy", duration: 135690 },
+    1: { name: "Ah Cid, My Boy", duration: 133690 },
     2: { name: "Cid is a Creeper", duration: 31690 },
     3: { name: "Maggie is a Good Doggo", duration: 47690},
     4: { name: "Doggie Projectile Vomits All Over Door", duration: 62690 },
