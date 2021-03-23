@@ -4,7 +4,7 @@ var Praetorium =
     0: { name: "Opening", duration: 53000},
     1: { name: "Ah Cid, My Boy", duration: 133690 },
     2: { name: "Cid is a Creeper", duration: 31690 },
-    3: { name: "Maggie is a Good Doggo", duration: 47690},
+    3: { name: "Maggie is a Good Doggo", duration: 45690},
     4: { name: "Doggie Projectile Vomits All Over Door", duration: 62690 },
     5: { name: "Daddy Never Loved Me!", duration: 180690 },
     6: { name: "Massive Power Surge", duration: 71690 },
