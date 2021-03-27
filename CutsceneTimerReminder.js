@@ -203,7 +203,10 @@ function UpdateDutyCustomizationTable()
                     break;
                 case 2:
                     if(currentDuty.length > 1)
+                    {
                         cellContents = CreateRemoveCutsceneButton(table, r+1);
+                        cell.classList.add("text-center");
+                    }
                     break;
             }
             cell.appendChild(cellContents);      // append DIV to the table cell
