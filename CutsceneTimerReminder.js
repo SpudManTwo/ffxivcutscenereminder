@@ -25,7 +25,7 @@ var CastrumMeridianum =
     5: { name: "Tactical Drone Inbound", duration: 25000 },
     6: { name: "Raise some hell", duration: 65000 },
     7: { name: "I Love Fireworks!", duration: 94000 },
-    8: { name: "What isn't conventional about this weapon?", duration: 46000 },
+    8: { name: "What isn\'t conventional about this weapon?", duration: 46000 },
     9: { name: "Time to Play the Claw Game", duration: 63000 },
     10:{ name: "No Thanks, You Can Keep Gaius", duration: 92000 },
     length: 11
@@ -294,7 +294,7 @@ function OnCutsceneClick()
     else
         document.getElementById("nextCutsceneName").innerHTML = "Next Cutscene: "+currentDuty[currentCutscene+1].name;
     noSleep.enable();
-    timeRemaining = document.getElementById("HDD").value ? currentDuty[currentCutscene].duration + 15000 : currentDuty[currentCutscene].duration;
+    timeRemaining = document.getElementById("HDD").checked ? currentDuty[currentCutscene].duration + 15000 : currentDuty[currentCutscene].duration;
     timerTask = setTimeout(UpdateTimer, 10);
     currentCutscene += 1;
 }
