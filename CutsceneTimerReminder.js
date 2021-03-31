@@ -78,6 +78,7 @@ var OrbonneMonastery =
 
 var currentCutscene;
 var currentDuty = JSON.parse(JSON.stringify(Praetorium));
+var lastTimeStamp;
 var timeRemaining;
 var timerTask;
 var RemoveRowClasses = ["h-8","w-64","text-m","bg-red-300","rounded-lg"];
@@ -299,12 +300,13 @@ function OnCutsceneClick()
     noSleep.enable();
     timeRemaining = document.getElementById("HDD").checked ? currentDuty[currentCutscene].duration + 15000 : currentDuty[currentCutscene].duration;
     timerTask = setTimeout(UpdateTimer, 10);
+    lastTimeStamp = Date.now();
     currentCutscene += 1;
 }
 
 function UpdateTimer()
-{    
-    timeRemaining = timeRemaining - 10;
+{   
+    timeRemaining = timeRemaining - (Date.now() - lastTimeStamp);
     var minutes = Math.floor((timeRemaining / 60000)).toString();
     var seconds = (timeRemaining % 60000) / 1000;
     if(seconds < 10)
@@ -312,7 +314,10 @@ function UpdateTimer()
     document.getElementById("timeRemaining").innerHTML = "Time Remaining: "+minutes+":"+seconds;
 
     if(timeRemaining > 0)
+    {
         timerTask = setTimeout(UpdateTimer, 10);
+        lastTimeStamp = Date.now();
+    }
     else
     {
         OnCutsceneEnd();
