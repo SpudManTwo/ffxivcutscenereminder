@@ -299,7 +299,7 @@ function OnCutsceneClick()
         document.getElementById("nextCutsceneName").innerHTML = "Next Cutscene: "+currentDuty[currentCutscene+1].name;
     noSleep.enable();
     timeRemaining = document.getElementById("HDD").checked ? currentDuty[currentCutscene].duration + 15000 : currentDuty[currentCutscene].duration;
-    timerTask = setTimeout(UpdateTimer, 10);
+    timerTask = setInterval(UpdateTimer, 10);
     lastTimeStamp = Date.now();
     currentCutscene += 1;
 }
@@ -307,21 +307,17 @@ function OnCutsceneClick()
 function UpdateTimer()
 {   
     timeRemaining = timeRemaining - (Date.now() - lastTimeStamp);
+    lastTimeStamp = Date.now();
     var minutes = Math.floor((timeRemaining / 60000)).toString();
     var seconds = (timeRemaining % 60000) / 1000;
     if(seconds < 10)
         seconds = "0"+seconds.toString();
     document.getElementById("timeRemaining").innerHTML = "Time Remaining: "+minutes+":"+seconds;
 
-    if(timeRemaining > 0)
-    {
-        timerTask = setTimeout(UpdateTimer, 10);
-        lastTimeStamp = Date.now();
-    }
-    else
+    if(timeRemaining <= 0)
     {
         OnCutsceneEnd();
-        clearTimeout(timerTask);
+        clearInterval(timerTask);
     }
 }
 
