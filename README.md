@@ -4,6 +4,8 @@ Helpful little app to alert when a cutscene is about to end and display the coun
 
 # Usage
 
+[Navigate to site here](https://spudmantwo.github.io/ffxivcutscenereminder/)
+
 Should work in any modern browser as well as cellphones. Just select the duty you want alerts for, and then click the begin cutscene button each time a cutscene begins.
 
 # Feedback
